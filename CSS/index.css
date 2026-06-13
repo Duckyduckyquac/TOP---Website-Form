@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+/*initialize the main structure*/
+#homeContainer{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "sidebarContainer formContainer"
+}
+/*initialize the sidebar and its image*/
+#sidebarContainer{
+    grid-area: sidebarContainer;
+    background: url(../images/cat.jpg);
+    height:100vh;
+}
+
+/*initialize the form and its contents*/
+#formContainer{
+    grid-area: formContainer;
+    grid-template-rows: 1fr 7fr;
+    grid-template-areas:
+    "header"
+    "formElement"
+}
+
+#formHeader{
+    grid-area:header;
+    text-align:center;
+}
+
+#signUpForm{
+    grid-area:formElement;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "firstName lastName"
+    "email phoneNumber"
+    "password confirmPassword"
+    "submitBtn submitBtn"
+}
+.formWrapper{
+    justify-self: center;
+    align-self: center;
+}
+#wrap_firstName{
+    grid-area: firstName;
+}
+
+#wrap_lastName{
+    grid-area: lastName;
+}
+
+#wrap_email{
+    grid-area:email;
+}
+
+#wrap_phoneNumber{
+    grid-area:phoneNumber;
+}
+
+#wrap_initializePass{
+    grid-area: password;
+}
+
+#wrap_finalizedPass{
+    grid-area: confirmPassword;
+}
+
+#createAccount{
+    grid-area:submitBtn;
+    justify-self: center;
+    align-self: center;
+    max-width: 5rem;
+}

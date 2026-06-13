@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>The Odin Project: Sign-Up Form</title>
-        <link rel="stylesheet" href="./CSS/index.css">
+        <link rel="stylesheet" href="../CSS/index.css">
     </head>
 
     <body>
-        <h1>
-            From technical innovations to competitive IT Solutions. Register
-            now or miss the chance to join or team!
-        </h1>
+        <div id="homeContainer">
 
-        <form action="" id="homeForm">
+            <div id="sidebarContainer">
+            </div>
 
-            <textarea id="firstName" class="simpleTextArea">
-                Your first name
-            </textarea>
+            <div id="formContainer">
+                <header id="formHeader">
+                    <h1>The Odin Project: Sign-Up Form</h1>
+                    <h2>Join now, or risk losing the chance to join our team!</h2>
+                </header>
 
-            <textarea id="lastName" class="simpleTextArea">
-                Your last name
-            </textarea>
+                <form id="signUpForm">
+                    <div class="formWrapper" id="wrap_firstName">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
 
-            <textarea id="email" class="simpleTextArea">
-                Your email
-            </textarea>
+                    <div class="formWrapper" id="wrap_lastName">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
 
-            <textarea id="intialPassword" class="simpleTextArea">
-                Your password
-            </textarea>
+                    <div class="formWrapper" id="wrap_email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-            <textarea id="confirmPassword" class="simpleTextArea">
-                Confirm your password
-            </textarea>
+                    <div class="formWrapper" id="wrap_phoneNumber">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="number" id="phoneNumber" name="phoneNumber" required>
+                    </div>
+                    
+                    <div class="formWrapper" id="wrap_initiatePass">
+                        <label for="initiatePass">Your Password</label>
+                        <input type="password" id="initiatePass" name="initiatePass" required>
+                    </div>
 
-            <button id="createAcntBtn">Create Account</button>
+                    <div class="formWrapper" id="wrap_finalizedPass">
+                        <label for="finalizedPass">Confirm Password</label>
+                        <input type="password" id="finalizedPass" name="finalizedPass" required>
+                    </div>
 
-        </form>
-
-        <script href="./JavaScript/index.js"></script>
+                    <button id="createAccount">Create Account</button>
+                </form>
+            </div>
+        </div>
+        <script src="../JavaScript/index.js"></script>
     </body>
+
 </html>
