@@ -1,78 +1,161 @@
-*{
+* {
     box-sizing: border-box;
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-/*initialize the main structure*/
-#homeContainer{
-    display:grid;
+#homeContainer {
+    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
     "sidebarContainer formContainer"
 }
-/*initialize the sidebar and its image*/
-#sidebarContainer{
+
+#sidebarContainer {
     grid-area: sidebarContainer;
-    background: url(../images/cat.jpg);
-    height:100vh;
+    background: url(../images/mountains.jpg);
+    height: 100vh;
 }
 
-/*initialize the form and its contents*/
-#formContainer{
+#imgWrapper {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "img header";
+    min-height: 5rem;
+    margin-top: 7rem;
+}
+
+#crossImg {
+    grid-area: img;
+    max-height: 3rem;
+    margin: auto;
+}
+
+#crossHeader {
+    grid-area: header;
+    color: white;
+    margin: auto;
+}
+
+#formContainer {
+    display: grid;
     grid-area: formContainer;
     grid-template-rows: 1fr 7fr;
     grid-template-areas:
     "header"
-    "formElement"
+    "formElement";
+
+    background-color: #F9F9F9;
+    max-height: 95vh;
 }
 
-#formHeader{
-    grid-area:header;
-    text-align:center;
+#formHeader {
+    margin: auto;
+    max-width: 80%;
+    grid-area: header;
+    text-align: center;
+    background-color: #4A5D4E;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-#signUpForm{
-    grid-area:formElement;
-    display:grid;
+#signUpForm {
+    grid-area: formElement;
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "firstName lastName"
     "email phoneNumber"
     "password confirmPassword"
     "submitBtn submitBtn"
+    "login login"
 }
-.formWrapper{
-    justify-self: center;
-    align-self: center;
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    width: 80%;
 }
-#wrap_firstName{
+/*input borders*/
+
+.simpleInput {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+    min-height: 2.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.simpleInput:focus{
+    outline: none;
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.simpleInput:user-invalid{
+    outline: none;
+    border: 1px solid red;
+    box-shadow: 0 0 5px rgba(255, 123, 255, 0.3);
+}
+
+#wrap_firstName {
     grid-area: firstName;
 }
 
-#wrap_lastName{
+#wrap_lastName {
     grid-area: lastName;
 }
 
-#wrap_email{
-    grid-area:email;
+#wrap_email {
+    grid-area: email;
 }
 
-#wrap_phoneNumber{
-    grid-area:phoneNumber;
+#wrap_phoneNumber {
+    grid-area: phoneNumber;
 }
 
-#wrap_initializePass{
+#wrap_initializePass {
     grid-area: password;
 }
 
-#wrap_finalizedPass{
+#wrap_finalizedPass {
     grid-area: confirmPassword;
 }
 
-#createAccount{
-    grid-area:submitBtn;
+#createAccount {
+    min-width: 15rem;
+    grid-area: submitBtn;
     justify-self: center;
     align-self: center;
-    max-width: 5rem;
+    background-color: #4A5D4E;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#createAccount:hover {
+    background-color: #3a4a3d;
+}
+
+#loginButton{
+    grid-area: login;
+    margin-left: 1rem;
+}
+/*font style definitions*/
+body {
+    font-family: "Roboto", sans-serif;
 }
